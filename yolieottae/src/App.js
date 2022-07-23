@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route path="/" exact={true} element={<Home />}></Route>
         <Route path="/recipes-search" element={<RecipesSearch />}></Route>
-        <Route path="/recipe" element={<Home />} />
         <Route path="/recommand" element={<Recommand />} />
         <Route path="/trend" element={<Trend />} />
       </Routes>
