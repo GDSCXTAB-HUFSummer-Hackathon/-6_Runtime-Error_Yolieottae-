@@ -9,7 +9,7 @@
 
 
 body {
-    font-family: 'Jua', sans-serif;
+    font-family: var(--content-fonts);
 }
 
 
@@ -77,4 +77,32 @@ footer {
     position : absolute;
     text-align: center;
     bottom : 0;;
+}
+
+.sub-coment {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.sub-coment .mini-coment {
+    width: 60%;
+    font-size: 20px;
+}
+
+.img-div {
+    width: 40%;
+}
+
+.sub-img {
+    width: 40%;
+    float: left;
+    transform:rotate(90deg);
+    -moz-transform: scaleX(-1); 
+    -o-transform: scaleX(-1); 
+    -webkit-transform: scaleX(-1); 
+    transform: scaleX(-1);   
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
