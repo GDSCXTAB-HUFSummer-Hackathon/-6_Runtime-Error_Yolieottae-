@@ -4,27 +4,27 @@ function Header() {
   return (
     <div>
       <header>
-        <ul class="menu-bar">
-          <li class="home-button-div">
+        <ul className="menu-bar">
+          <li className="home-button-div">
             <Link to="/">
-              <button class="home-button">
+              <button className="home-button">
                 <span>요</span>리 <span>어</span>때<span>?</span>
               </button>
             </Link>
           </li>
-          <li class="bar-div">
-            <Link to="/recipe">
-              <button class="recipe-button">레시피</button>
+          <li className="bar-div">
+            <Link to="/recipes-search">
+              <button className="recipe-button">레시피</button>
             </Link>
           </li>
-          <li class="bar-div">
+          <li className="bar-div">
             <Link to="/recommend">
-              <button class="recommend-button">추천</button>
+              <button className="recommend-button">추천</button>
             </Link>
           </li>
-          <li class="bar-div">
+          <li className="bar-div">
             <Link to="/trend">
-              <button class="trend-button">트랜드</button>
+              <button className="trend-button">트랜드</button>
             </Link>
           </li>
         </ul>

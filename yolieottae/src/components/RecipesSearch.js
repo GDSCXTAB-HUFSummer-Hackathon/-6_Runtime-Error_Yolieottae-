@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getRecipesData } from "../utils/firebaseConfig";
 import { fomatTagData } from "../utils/util";
+import Header from "./Header";
 import SummaryList from "./SummaryList";
 
 function RecipesSearch() {
@@ -42,43 +43,46 @@ function RecipesSearch() {
   if (recipesData != null)
     content = <SummaryList recipesData={recipesData}></SummaryList>;
   return (
-    <div className="container">
-      <form className="input-group mb-3" onSubmit={onSearchHandler}>
-        <input
-          className="form-control"
-          type="text"
-          name="searchWordInput"
-          placeholder="어떤 요리 레시피?"
-        ></input>
-        <input
-          className="btn btn-outline-warning"
-          type="submit"
-          value="검색"
-        ></input>
-      </form>
-      <form className="input-group" onSubmit={onAddTagHandler}>
-        <input
-          className="form-control"
-          type="text"
-          name="tagInput"
-          placeholder="어떤 태그?"
-        ></input>
-        <input
-          className=" btn btn-outline-warning"
-          type="submit"
-          value="좋아요"
-          name="posTag"
-        ></input>
-        <input
-          className="btn btn-outline-warning"
-          type="submit"
-          value="싫어요"
-          name="negTag"
-        ></input>
-        <br />
-      </form>
-      <div className="list-group m-1">{fomatTagData(tagData)}</div>
-      {content}
+    <div>
+      <Header></Header>
+      <div className="container">
+        <form className="input-group mb-3" onSubmit={onSearchHandler}>
+          <input
+            className="form-control"
+            type="text"
+            name="searchWordInput"
+            placeholder="어떤 요리 레시피?"
+          ></input>
+          <input
+            className="btn btn-outline-warning"
+            type="submit"
+            value="검색"
+          ></input>
+        </form>
+        <form className="input-group" onSubmit={onAddTagHandler}>
+          <input
+            className="form-control"
+            type="text"
+            name="tagInput"
+            placeholder="어떤 태그?"
+          ></input>
+          <input
+            className=" btn btn-outline-warning"
+            type="submit"
+            value="좋아요"
+            name="posTag"
+          ></input>
+          <input
+            className="btn btn-outline-warning"
+            type="submit"
+            value="싫어요"
+            name="negTag"
+          ></input>
+          <br />
+        </form>
+        <div className="list-group m-1">{fomatTagData(tagData)}</div>
+        {content}
+      </div>
     </div>
   );
 }
