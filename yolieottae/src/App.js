@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Trend from "./components/Trend";
-import Recommend from "./components/Recommend"
+import Recommend from "./components/Recommand"
 
 function App() {
   return (

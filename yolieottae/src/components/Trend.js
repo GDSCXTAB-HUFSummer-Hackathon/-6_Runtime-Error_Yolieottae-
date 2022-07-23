@@ -12,6 +12,11 @@ function Trend() {
     <div class="wrap">
         <Header></Header>
         <section class="trend-bar">
+            <div class="trend-comment">
+                <span>2022 트랜드</span><br/>
+                코로나가 바꾼 먹거리 트랜드<br/>
+                다가오는 엔데믹 흐름에 맞춘 다양한 컨셉
+            </div>
             <img class="trend-bar-img" src={trendImage1} />
         </section>
         <section class="keyword-trend">
