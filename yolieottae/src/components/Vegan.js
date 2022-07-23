@@ -3,9 +3,9 @@ import vegan from "../img/vegan.jpg";
 import Header from "./Header";
 function Vegan(){
     return(
-        <div>
-            
-            <img src={vegan} alt="vegan"></img>
+        <div class="choice">
+            <Header></Header>
+            <img width="400" src={vegan} alt="vegan"></img>
             <h2>연두부 샐러드</h2>
             <h3>초스피드로 즐기는 비건 두부 샐러드</h3>
             <ul class="salad">

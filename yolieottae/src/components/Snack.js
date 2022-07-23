@@ -3,9 +3,9 @@ import snack from "../img/snack.jpg";
 import Header from "./Header";
 function Snack(){
     return(
-        <div>
-            
-            <img src={snack} alt="snack"></img>
+        <div class="choice">
+            <Header></Header>
+            <img width="400" src={snack} alt="snack"></img>
             <h2>또띠아 마늘칩</h2>
             <h3>10분이면 간단히 만드는 한입쏙 마늘칩</h3>
             <ul class="chip">

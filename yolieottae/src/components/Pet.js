@@ -4,9 +4,9 @@ import Header from "./Header";
 
 function Pet(){
     return(
-        <div>
-            
-            <img src={pet} alt="pet"></img>
+        <div class="choice">
+            <Header></Header>
+            <img width="400" src={pet} alt="pet"></img>
             <h2>강아지 파르페</h2>
             <h3>강아지를 위한 화식 파르페</h3>
             <ul class="dog">
