@@ -25,14 +25,14 @@ function SummaryItem(props) {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{recipeData.title}</h5>
-            <p className="card-text row text-nowrap">{content}</p>
-            <p className="card-text">
+            <div className="card-text row text-nowrap">{content}</div>
+            <div className="card-text">
               <small className="text-muted">{recipeData.uploadTime}</small>
-            </p>
+            </div>
           </div>
         </div>
       </div>
-      <Collapse content={recipeData.content}></Collapse>
+      <Collapse content={recipeData.content} id={props.id}></Collapse>
     </div>
   );
 }
