@@ -2,12 +2,12 @@
 import React from 'react';
 import Header from "./Header";
 
-function Button(){
+function Recommand(){
     return (
         
         <div>
             <Header></Header>
-            <ul class="menu">
+            <ul class="menu-bar">
                 <li class="bar-div">
                     <button class="vegan">비건</button>
                 </li>
@@ -28,4 +28,4 @@ function Button(){
     )
 }
 
-export default Button;
+export default Recommand;
