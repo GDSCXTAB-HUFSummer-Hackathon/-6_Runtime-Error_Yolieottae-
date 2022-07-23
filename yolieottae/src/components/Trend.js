@@ -70,10 +70,12 @@ function Trend() {
                     </div>
                 </button>
             </section>
-                <img class="trend-content-img" src={content[0]} />
-                <img class="trend-content-img" src={content[1]} />
-            <section>
 
+            <section>
+                <div class="img-div">
+                    <img class="trend-content-img" src={content[0]} />
+                    <img class="trend-content-img" src={content[1]} />
+                </div>
             </section>
             
             <footer>
