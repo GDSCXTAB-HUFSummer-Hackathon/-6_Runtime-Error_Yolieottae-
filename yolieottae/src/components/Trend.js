@@ -13,26 +13,40 @@ function Trend() {
         <Header></Header>
         <section class="trend-bar">
             <div class="trend-comment">
-                <span>2022 트랜드</span><br/>
+                <span><span class="tab">2022</span> 트랜드</span><br/>
                 코로나가 바꾼 먹거리 트랜드<br/>
                 다가오는 엔데믹 흐름에 맞춘 다양한 컨셉
             </div>
             <img class="trend-bar-img" src={trendImage1} />
         </section>
+        
         <section class="keyword-trend">
             <button class="icon-food">
-                <FontAwesomeIcon icon={faCarrot} size="5x" />
+                <div class="btn-div">
+                    <FontAwesomeIcon icon={faCarrot} size="5x" />
+                    먹거리
+                </div>
             </button>
             <button class="icon-mealkit" href="">
-                <FontAwesomeIcon icon={faKitchenSet} size="5x" />
+                <div class="btn-div">
+                    <FontAwesomeIcon icon={faKitchenSet} size="5x" />
+                    밀키트
+                </div>
             </button>
             <button class="icon-theme" href="">
-                <FontAwesomeIcon icon={faUtensils} size="5x" />
+                <div class="btn-div">
+                    <FontAwesomeIcon icon={faUtensils} size="5x" />
+                    식당
+                </div>
             </button>
             <button class="icon-health" href="">
-                <FontAwesomeIcon icon={faHandHoldingMedical} size="5x" />
+                <div class="btn-div">
+                    <FontAwesomeIcon icon={faHandHoldingMedical} size="5x" />
+                    건강
+                </div>
             </button>
         </section>
+        
         <section>
 
         </section>

@@ -131,9 +131,14 @@ footer {
     line-height: 100px;
 }
 
+.trend-comment span .tab {
+    color: orange;
+}
+
 .trend-comment {
     height: 100px;
     font-size: 20px;
+    color: var(--font-color);
     margin-top: 20px;
     padding-left: 50px;
 }
@@ -179,13 +184,13 @@ footer {
     }
     
     .trend-comment span {
-        height: 150px;
+        height: 140px;
         font-size: 60px;
-        line-height: 150px;
+        line-height: 140px;
     }
     
     .trend-comment {
-        height: 120px;
+        height: 130px;
         font-size: 20px;
         margin-top: 20px;
         padding-left: 60px;
@@ -205,13 +210,13 @@ footer {
     }
     
     .trend-comment span {
-        height: 170px;
+        height: 160px;
         font-size: 60px;
-        line-height: 170px;
+        line-height: 160px;
     }
     
     .trend-comment {
-        height: 130px;
+        height: 140px;
         font-size: 20px;
         margin-top: 20px;
         padding-left: 60px;
@@ -231,13 +236,13 @@ footer {
     }
     
     .trend-comment span {
-        height: 200px;
+        height: 180px;
         font-size: 70px;
-        line-height: 200px;
+        line-height: 180px;
     }
     
     .trend-comment {
-        height: 150px;
+        height: 170px;
         font-size: 34px;
         margin-top: 20px;
         padding-left: 90px;
@@ -257,12 +262,23 @@ footer {
 
 .keyword-trend button {
     width: 25%;
+    text-align: center;
     border: none;
     background-color: transparent;
     color: var(--font-color);
+    font-family: var(--content-fonts);
+    font-size: 24px;
 }
 
 .keyword-trend button svg {
     border-radius: 50%;
     background-color: var(--sub-background-color);
+}
+
+.keyword-trend button .btn-div {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 30%;
 }
