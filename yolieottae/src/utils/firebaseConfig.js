@@ -6,11 +6,21 @@ import {
   doc,
   setDoc,
   getDocs,
+  query,
+  where,
 } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+const COLLECTION_NAME_RECIPES = "recipes";
+const DOCUMENT_NAME_ID = "id";
+const DOCUMENT_NAME_CONTENT = "content";
+const DOCUMENT_NAME_TAGS = "tags";
+const DOCUMENT_NAME_THUMBNAIL = "thumbnail";
+const DOCUMENT_NAME_TITLE = "title";
+const DOCUMENT_NAME_UPLOADTIME = "uploadTime";
+
+const QUERY_OP_ARRAY_CONTAINS_ANY = "array-contains-any";
+const QUERY_OP_ARRAY_CONTAINS = "array-contains";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBjXXH9WcS5fhHb_VKpMA5AZzkiLZT2xng",
   authDomain: "yolieottae.firebaseapp.com",
@@ -25,7 +35,42 @@ export const app = initializeApp(firebaseConfig);
 
 export const firestore = getFirestore(app);
 
-const citiesRef = collection(firestore, "cities");
+const recipesRef = collection(firestore, COLLECTION_NAME_RECIPES);
+
+function makeQuery(posTags, negTags, title, content) {
+  const queryArr = [];
+  for (let i in posTags) {
+    queryArr.push(where(DOCUMENT_NAME_TAGS + "." + posTags[i], "==", true));
+  }
+  for (let i in negTags) {
+    queryArr.push(where(DOCUMENT_NAME_TAGS + "." + negTags[i], "==", null));
+  }
+  if (title != null) queryArr.push(where(DOCUMENT_NAME_TITLE, "==", title));
+  if (content != null) queryArr.push(where(DOCUMENT_NAME_TITLE, "==", content));
+  return queryArr;
+}
+
+export async function getRecipesData(
+  onLoadHandler,
+  posTags,
+  negTags,
+  title,
+  content
+) {
+  //   const q = query(recipesRef, ...makeQuery(["김치", "마늘"]));
+  const queryArr = makeQuery(posTags, negTags, title, content);
+  const q = query(recipesRef, ...queryArr);
+
+  const querySnapshot = await getDocs(q);
+  const dataArr = querySnapshot.docs.map((doc) => {
+    return doc.data();
+  });
+  //   querySnapshot.forEach((doc) => {
+  //     console.log(doc.id, "array-contains-any", doc.data());
+  //     onLoadHandler();
+  //   });
+  onLoadHandler(dataArr);
+}
 
 // export async function examWrite() {
 //   await setDoc(doc(citiesRef, "SF"), {
