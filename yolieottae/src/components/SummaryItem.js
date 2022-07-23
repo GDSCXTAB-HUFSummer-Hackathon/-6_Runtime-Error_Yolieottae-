@@ -16,17 +16,24 @@ function SummaryItem(props) {
       <div className="row g-0">
         <div className="col-md-4">
           <img
-            className="img-fluid rounded-start"
+            className="img-fluid rounded-start m-2"
             src={recipeData.thumbnail}
             alt="thumbnail"
           ></img>
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{recipeData.title}</h5>
-            <div className="card-text row text-nowrap">{content}</div>
+            <h5 className="card-title">
+              {recipeData.title}
+              <small className="text-muted m-3">{`작성자: ${recipeData.userId}`}</small>
+            </h5>
             <div className="card-text">
-              <small className="text-muted">{recipeData.uploadTime}</small>
+              <small className="text-muted">
+                {`작성일: ${recipeData.uploadTime}`}
+              </small>
+            </div>
+            <div className="card-text row row-cols-auto text-nowrap m-5">
+              {content}
             </div>
           </div>
         </div>
