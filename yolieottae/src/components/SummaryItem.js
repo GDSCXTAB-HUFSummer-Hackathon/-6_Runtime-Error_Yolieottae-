@@ -1,4 +1,5 @@
 import image01 from "../img/home-img.jpg";
+import Collapse from "./Collapse";
 
 function SummaryItem(props) {
   const recipeData = props.recipeData;
@@ -31,8 +32,8 @@ function SummaryItem(props) {
           </div>
         </div>
       </div>
+      <Collapse content={recipeData.content}></Collapse>
     </div>
   );
 }
-
 export default SummaryItem;
