@@ -37,16 +37,24 @@ export const firestore = getFirestore(app);
 
 const recipesRef = collection(firestore, COLLECTION_NAME_RECIPES);
 
-function makeQuery(posTags, negTags, title, content) {
-  const queryArr = [];
-  for (let i in posTags) {
-    queryArr.push(where(DOCUMENT_NAME_TAGS + "." + posTags[i], "==", true));
-  }
-  for (let i in negTags) {
-    queryArr.push(where(DOCUMENT_NAME_TAGS + "." + negTags[i], "==", null));
-  }
-  if (title != null) queryArr.push(where(DOCUMENT_NAME_TITLE, "==", title));
-  if (content != null) queryArr.push(where(DOCUMENT_NAME_TITLE, "==", content));
+function makeQuery() {
+  const queryArr = [where(DOCUMENT_NAME_TITLE, "!=", null)];
+  //   if (posTags != [])
+  //     for (let i in posTags) {
+  //       queryArr.push(where(DOCUMENT_NAME_TAGS + "." + posTags[i], "==", true));
+  //     }
+  //   if (negTags != [])
+  //     for (let i in negTags) {
+  //       queryArr.push(where(DOCUMENT_NAME_TAGS + "." + negTags[i], "==", null));
+  //     }
+  //   if (title != null && title != "") {
+  //     queryArr.push(where(DOCUMENT_NAME_TITLE, ">=", title));
+  //     queryArr.push(where(DOCUMENT_NAME_TITLE, "<=", title + "\uf8ff"));
+  //   }
+  //   if (content != null && content != "") {
+  //     queryArr.push(where(DOCUMENT_NAME_CONTENT, ">=", content));
+  //     queryArr.push(where(DOCUMENT_NAME_CONTENT, "<=", content + "\uf8ff"));
+  //   }
   return queryArr;
 }
 
@@ -57,13 +65,25 @@ export async function getRecipesData(
   title,
   content
 ) {
-  //   const q = query(recipesRef, ...makeQuery(["김치", "마늘"]));
-  const queryArr = makeQuery(posTags, negTags, title, content);
+  //   const queryArr = makeQuery(posTags, negTags, title, content);
+  const queryArr = makeQuery();
   const q = query(recipesRef, ...queryArr);
-
   const querySnapshot = await getDocs(q);
-  const dataArr = querySnapshot.docs.map((doc) => {
+
+  let dataArr = querySnapshot.docs.map((doc) => {
     return doc.data();
+  });
+
+  dataArr = dataArr.filter((data) => {
+    for (let i in posTags) {
+      if (Object.keys(data.tags).includes(posTags[i]) === false) return false;
+    }
+    for (let i in negTags) {
+      if (Object.keys(data.tags).includes(negTags[i]) === true) return false;
+    }
+    if (data.title.includes(title) == false) return false;
+
+    return true;
   });
   //   querySnapshot.forEach((doc) => {
   //     console.log(doc.id, "array-contains-any", doc.data());
