@@ -1,10 +1,10 @@
 import React from 'react'
-import vegan from "../img/vegan/.jpg";
+import vegan from "../img/vegan.jpg";
 import Header from "./Header";
 function Vegan(){
     return(
         <div>
-            <Header></Header>
+            
             <img src={vegan} alt="vegan"></img>
             <h2>연두부 샐러드</h2>
             <h3>초스피드로 즐기는 비건 두부 샐러드</h3>

@@ -1,10 +1,10 @@
 import React from 'react'
-import diet from "../img/diet/.jpg";
+import diet from "../img/diet.jpg";
 import Header from "./Header";
 function Diet(){
     return(
         <div>
-            <Header></Header>
+            
             <img src={diet} alt="diet"></img>
             <h2>파프리카 피자</h2>
             <h3>밀가루 없는 건강한 다이어트 피자</h3>

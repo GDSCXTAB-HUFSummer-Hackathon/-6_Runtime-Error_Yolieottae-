@@ -1,11 +1,11 @@
 import React from 'react'
-import pet from "../img/pet/.png";
+import pet from "../img/pet.png";
 import Header from "./Header";
 
 function Pet(){
     return(
         <div>
-            <Header></Header>
+            
             <img src={pet} alt="pet"></img>
             <h2>강아지 파르페</h2>
             <h3>강아지를 위한 화식 파르페</h3>
