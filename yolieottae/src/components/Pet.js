@@ -1,5 +1,5 @@
 import React from 'react'
-import pet from "../img/pet/.jpg";
+import pet from "../img/pet/.png";
 
 function Pet(){
     return(
