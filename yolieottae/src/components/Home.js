@@ -6,15 +6,11 @@ function Home() {
   return (
     <div class="wrap">
       <Header></Header>
+      
       <section class="sub-coment">
         <img class="sub-img" alt="sub-img1" src={homeImage1} />
       </section>
-      <section>
-        
-      </section>
-      <section>
-        
-      </section>
+
       <footer>
         <div class="footer-div">
           <p class="footer-content">

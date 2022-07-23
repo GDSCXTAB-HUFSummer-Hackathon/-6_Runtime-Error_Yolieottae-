@@ -76,11 +76,9 @@ li {
     color: var(--font-color);
 }
 
-li button:hover:not(.active) {
+.bar-div button:hover:not(.active) {
     color: orange;
 }
-
-
 
 footer {
     width: 100%;
@@ -111,4 +109,23 @@ footer {
         width: 100%;
         height: 925px;
     }
+}
+
+.keyword-trend {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    line-height: 400px;
+}
+
+.keyword-trend button {
+    width: 25%;
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+.keyword-trend button svg {
+    border-radius: 50%;
+    background-color: rgb(255, 226, 173);
 }
