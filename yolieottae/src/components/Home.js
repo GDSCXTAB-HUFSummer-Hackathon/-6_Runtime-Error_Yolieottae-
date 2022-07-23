@@ -1,21 +1,18 @@
-import { examWrite } from "../utils/firebaseConfig";
 import homeImage1 from "../img/home-img.jpg";
 import Header from "./Header";
 
 function Home() {
   return (
-    <div class="wrap">
+    <div className="wrap">
       <Header></Header>
-      
-      <section class="sub-coment">
-        <img class="sub-img" alt="sub-img1" src={homeImage1} />
+
+      <section className="sub-coment">
+        <img className="sub-img" alt="sub-img1" src={homeImage1} />
       </section>
 
       <footer>
-        <div class="footer-div">
-          <p class="footer-content">
-            Runtime Error &copy; 요리어때?
-          </p>
+        <div className="footer-div">
+          <p className="footer-content">Runtime Error &copy; 요리어때?</p>
         </div>
       </footer>
     </div>
