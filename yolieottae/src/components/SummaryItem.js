@@ -1,4 +1,3 @@
-import image01 from "../img/home-img.jpg";
 import Collapse from "./Collapse";
 
 function SummaryItem(props) {
@@ -18,7 +17,7 @@ function SummaryItem(props) {
         <div className="col-md-4">
           <img
             className="img-fluid rounded-start"
-            src={image01}
+            src={recipeData.thumbnail}
             alt="thumbnail"
           ></img>
         </div>
