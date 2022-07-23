@@ -1,9 +1,11 @@
 import React from 'react'
 import baby from "../img/baby/.jpg";
+import Header from "./Header";
 
 function Baby(){
     return(
         <div>
+            <Header></Header>
             <img src={baby} alt="baby"></img>
             <h2>단호박 닭가슴살 죽</h2>
             <h3>8개월차 중기 아기 먹일 이유식</h3>
