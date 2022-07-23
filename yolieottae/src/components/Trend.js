@@ -3,6 +3,9 @@ import Header from "./Header";
 import trendImage1 from "../img/trend-img.jpg";
 import trendImageFood from "../img/trend-food-img.png"
 import trendImageFood2 from "../img/trend-food2-img.png"
+import trendImageMealkit from "../img/trend-mealkit-img.png"
+import trendImageTheme from "../img/trend-theme-img.png"
+import trendImageHealth from "../img/trend-health-img.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCarrot } from "@fortawesome/free-solid-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons"; 
@@ -15,6 +18,18 @@ function Trend() {
     
     const changeFood = () => {
         setContent([trendImageFood, trendImageFood2]);
+    }
+
+    const changeMealkit = () => {
+        setContent([trendImageMealkit, ""]);
+    }
+
+    const changeTheme = () => {
+        setContent([trendImageTheme, ""]);
+    }
+
+    const changeHealth = () => {
+        setContent([trendImageHealth, ""]);
     }
 
     return (
@@ -36,19 +51,19 @@ function Trend() {
                         먹거리
                     </div>
                 </button>
-                <button class="icon-mealkit" href="">
+                <button class="icon-mealkit" onClick={changeMealkit}>
                     <div class="btn-div">
                         <FontAwesomeIcon icon={faKitchenSet} size="5x" />
                         밀키트
                     </div>
                 </button>
-                <button class="icon-theme" href="">
+                <button class="icon-theme" onClick={changeTheme}>
                     <div class="btn-div">
                         <FontAwesomeIcon icon={faUtensils} size="5x" />
                         식당
                     </div>
                 </button>
-                <button class="icon-health" href="">
+                <button class="icon-health" onClick={changeHealth}>
                     <div class="btn-div">
                         <FontAwesomeIcon icon={faHandHoldingMedical} size="5x" />
                         건강
