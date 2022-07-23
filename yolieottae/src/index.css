@@ -350,7 +350,8 @@ footer {
 
 .ingredient {
     list-style: none;
-    padding-left: 5px;
+    padding-left: 10px;
+    margin-left:200px;
 }
 
 
@@ -360,5 +361,5 @@ footer {
 }
 
 .choice{
-    margin-left:50px;
+    text-align:center;
 }
