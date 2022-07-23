@@ -18,8 +18,8 @@ function Header() {
             </Link>
           </li>
           <li class="bar-div">
-            <Link to="/recommend">
-              <button class="recommend-button">추천</button>
+            <Link to="/recommand">
+              <button class="recommand-button">추천</button>
             </Link>
           </li>
           <li class="bar-div">

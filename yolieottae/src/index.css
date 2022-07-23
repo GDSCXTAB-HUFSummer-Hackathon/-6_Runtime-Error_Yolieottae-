@@ -64,7 +64,7 @@ li {
 }
 
 .recipe-button,
-.recommend-button,
+.recommand-button,
 .trend-button {
     display: block;
     font-size: 24px;
@@ -282,3 +282,8 @@ footer {
     text-align: center;
     margin-left: 30%;
 }
+
+.keyword-trend button:hover:not(.active) {
+    color: orange;
+}
+
