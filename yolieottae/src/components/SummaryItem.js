@@ -1,4 +1,4 @@
-import image01 from "../img/01.jpg";
+import image01 from "../img/home-img.jpg";
 
 function SummaryItem(props) {
   const recipeData = props.recipeData;
