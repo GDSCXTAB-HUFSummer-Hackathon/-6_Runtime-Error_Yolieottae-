@@ -6,11 +6,21 @@ import {
   doc,
   setDoc,
   getDocs,
+  query,
+  where,
 } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+const COLLECTION_NAME_RECIPES = "recipes";
+const DOCUMENT_NAME_ID = "id";
+const DOCUMENT_NAME_CONTENT = "content";
+const DOCUMENT_NAME_TAGS = "tags";
+const DOCUMENT_NAME_THUMBNAIL = "thumbnail";
+const DOCUMENT_NAME_TITLE = "title";
+const DOCUMENT_NAME_UPLOADTIME = "uploadTime";
+
+const QUERY_OP_ARRAY_CONTAINS_ANY = "array-contains-any";
+const QUERY_OP_ARRAY_CONTAINS = "array-contains";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBjXXH9WcS5fhHb_VKpMA5AZzkiLZT2xng",
   authDomain: "yolieottae.firebaseapp.com",
@@ -25,7 +35,62 @@ export const app = initializeApp(firebaseConfig);
 
 export const firestore = getFirestore(app);
 
-const citiesRef = collection(firestore, "cities");
+const recipesRef = collection(firestore, COLLECTION_NAME_RECIPES);
+
+function makeQuery() {
+  const queryArr = [where(DOCUMENT_NAME_TITLE, "!=", null)];
+  //   if (posTags != [])
+  //     for (let i in posTags) {
+  //       queryArr.push(where(DOCUMENT_NAME_TAGS + "." + posTags[i], "==", true));
+  //     }
+  //   if (negTags != [])
+  //     for (let i in negTags) {
+  //       queryArr.push(where(DOCUMENT_NAME_TAGS + "." + negTags[i], "==", null));
+  //     }
+  //   if (title != null && title != "") {
+  //     queryArr.push(where(DOCUMENT_NAME_TITLE, ">=", title));
+  //     queryArr.push(where(DOCUMENT_NAME_TITLE, "<=", title + "\uf8ff"));
+  //   }
+  //   if (content != null && content != "") {
+  //     queryArr.push(where(DOCUMENT_NAME_CONTENT, ">=", content));
+  //     queryArr.push(where(DOCUMENT_NAME_CONTENT, "<=", content + "\uf8ff"));
+  //   }
+  return queryArr;
+}
+
+export async function getRecipesData(
+  onLoadHandler,
+  posTags,
+  negTags,
+  title,
+  content
+) {
+  //   const queryArr = makeQuery(posTags, negTags, title, content);
+  const queryArr = makeQuery();
+  const q = query(recipesRef, ...queryArr);
+  const querySnapshot = await getDocs(q);
+
+  let dataArr = querySnapshot.docs.map((doc) => {
+    return doc.data();
+  });
+
+  dataArr = dataArr.filter((data) => {
+    for (let i in posTags) {
+      if (Object.keys(data.tags).includes(posTags[i]) === false) return false;
+    }
+    for (let i in negTags) {
+      if (Object.keys(data.tags).includes(negTags[i]) === true) return false;
+    }
+    if (data.title.includes(title) == false) return false;
+
+    return true;
+  });
+  //   querySnapshot.forEach((doc) => {
+  //     console.log(doc.id, "array-contains-any", doc.data());
+  //     onLoadHandler();
+  //   });
+  onLoadHandler(dataArr);
+}
 
 // export async function examWrite() {
 //   await setDoc(doc(citiesRef, "SF"), {
