@@ -45,7 +45,7 @@ function RecipesSearch() {
   return (
     <div>
       <Header></Header>
-      <div className="container">
+      <div className="container mt-5">
         <form className="input-group mb-3" onSubmit={onSearchHandler}>
           <input
             className="form-control"

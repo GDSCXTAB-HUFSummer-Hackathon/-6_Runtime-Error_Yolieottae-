@@ -39,6 +39,10 @@ li {
     float: left;
 }
 
+.navigator{
+    z-index: 2;
+}
+
 .introduce{
     position: fixed;
     text-align: center center;
