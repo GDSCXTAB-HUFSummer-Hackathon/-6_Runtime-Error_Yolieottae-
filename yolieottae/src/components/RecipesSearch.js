@@ -30,7 +30,12 @@ function RecipesSearch() {
     const newNegTagData = Array.from(tagData.neg);
     const tagType = e.nativeEvent.submitter.name;
     const newTag = e.target.tagInput.value;
-
+    if (
+      newPosTagData.includes(newTag) ||
+      newNegTagData.includes(newTag) ||
+      newTag == ""
+    )
+      return;
     if (tagType === "posTag") {
       newPosTagData.push(newTag);
     } else if (tagType === "negTag") {

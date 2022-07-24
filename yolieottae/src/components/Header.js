@@ -23,14 +23,14 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/recipes-search">
-              <button className="recipe-button">레시피</button>
+              <button className="recipe-button ms-5 me-5">레시피</button>
             </Link>
 
             <Link to="/recommand">
-              <button className="recommand-button">추천</button>
+              <button className="recommand-button ms-5 me-5">추천</button>
             </Link>
             <Link to="/trend">
-              <button className="trend-button">트랜드</button>
+              <button className="trend-button ms-5 me-5">트랜드</button>
             </Link>
           </Nav>
         </Navbar.Collapse>
