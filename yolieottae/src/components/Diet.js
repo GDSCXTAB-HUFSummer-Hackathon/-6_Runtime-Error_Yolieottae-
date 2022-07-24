@@ -6,6 +6,7 @@ function Diet(){
     return(
         <div class="choice">
             <Header></Header>
+            <div class="v1">
             <img width="400" src={diet} alt="diet"></img>
             <h2>파프리카 피자</h2>
             <h3>밀가루 없는 건강한 다이어트 피자</h3>
@@ -15,7 +16,9 @@ function Diet(){
                 <li class="ingredient">#양파</li>
                 <li class="ingredient">#피자치즈</li>
             </ul>
+            </div>
 
+            <div class="v2">
             <img width="400" src={diet2} alt="diet2"></img>
             <h2>두부튀김</h2>
             <h3>칼로리 부담없는 일본식 두부튀김 요리</h3>
@@ -26,6 +29,7 @@ function Diet(){
                 <li class="ingredient">#감자전분</li>
                 <li class="ingredient">#가쓰오부시</li>
             </ul>
+            </div>
         </div>
     )
 }
