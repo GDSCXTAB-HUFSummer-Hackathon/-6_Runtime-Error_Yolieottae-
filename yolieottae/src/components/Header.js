@@ -1,35 +1,41 @@
 import { Link } from "react-router-dom";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 function Header() {
   return (
-    <div>
-      <header>
-        <ul className="menu-bar">
-          <li className="home-button-div">
-            <Link to="/">
-              <button className="home-button">
-                <span>요</span>리 <span>어</span>때<span>?</span>
-              </button>
-            </Link>
-          </li>
-          <li className="bar-div">
+    <Navbar
+      className="navigator"
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      variant="light"
+    >
+      <Container>
+        <Link to="/">
+          <Navbar.Brand>
+            <button className="home-button">
+              <span>요</span>리 <span>어</span>때<span>?</span>
+            </button>
+          </Navbar.Brand>
+        </Link>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
             <Link to="/recipes-search">
               <button className="recipe-button">레시피</button>
             </Link>
-          </li>
-          <li className="bar-div">
+
             <Link to="/recommand">
               <button className="recommand-button">추천</button>
             </Link>
-          </li>
-          <li className="bar-div">
             <Link to="/trend">
               <button className="trend-button">트랜드</button>
             </Link>
-          </li>
-        </ul>
-      </header>
-    </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
